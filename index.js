@@ -28,9 +28,7 @@ initializeDBAndServer()
 const authenticateToken = (request, response, next) => {
   let jwtToken
   const authHeader = request.headers['authorization']
-  if (authHeader !== undefined) {
-    jwtToken = authHeader.split(' ')[1]
-  }
+  jwtToken = authHeader.split(' ')[1]
   if (jwtToken === undefined) {
     response.status(401)
     response.send('Invalid Access Token')
@@ -111,7 +109,7 @@ app.post('/login/', async (request, response) => {
     response.status(400)
     response.send('Invalid User')
   } else {
-    const isPasswordMatched = await bcrypt.compare(request.body.password, dbUser.password)
+    const isPasswordMatched = await bcrypt.compare(password, dbUser.password)
     if (isPasswordMatched === true) {
       const payload = {
         username: username,
