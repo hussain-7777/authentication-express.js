@@ -84,4 +84,5 @@ app.get('/books/', authenticateToken, async (request, response) => {
     const getBooksQuery = `select * from book;`;
     const booksdb = await db.all(getBooksQuery);
     response.send(booksdb);
+    response.send("books");
 })

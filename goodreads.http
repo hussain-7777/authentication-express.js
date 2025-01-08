@@ -12,10 +12,20 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJha
 Content-Type: application/json
 
 {    
+    "name": "rahul",
     "username": "rahul123",
     "password": "rahul@456",
     "gender":"male",
     "location":"hyderabad"
+}
+###
+DELETE http://localhost:3000/users/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhaHVsMTIzIiwiaWF0IjoxNzEwMzEzOTI2fQ.Wy8mniL3_hvAyIgYgpGjdWjr_ZyfInSk7qS3UKaNw78
+Content-Type: application/json
+
+{    
+    "username": "rahul123",
+    "password": "rahul@456"
 }
 
 ###
